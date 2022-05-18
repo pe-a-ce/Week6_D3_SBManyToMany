@@ -1,15 +1,24 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 import java.util.Set;
 
+@Entity
 public class Student {
 
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
 
+    @ManyToMany(mappedBy = "students")
+    @JsonIgnoreProperties(value = {"students"})
     private Set<Lab> labs;
 
+//    many libraries require a no arg constructor to run properly
     public Student() {
     }
 
