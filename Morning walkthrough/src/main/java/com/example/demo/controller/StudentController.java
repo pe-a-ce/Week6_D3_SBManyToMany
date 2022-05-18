@@ -45,7 +45,7 @@ return ResponseEntity
 
         List<Student> students;
         if (orderedByLastName) {
-            students = studentRepository.findAllOrdered();
+            students = studentRepository.findAllByLastNameOrdered();
         } else {
             students = studentRepository.findAll();
         }

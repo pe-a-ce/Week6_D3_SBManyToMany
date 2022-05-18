@@ -40,7 +40,7 @@ public class LabController {
                 .body(result);
     }
 
-//    this relates to the nameGeneratesQuery in LabRepo
+//    this relates to the nameGeneratesQuery in LabRepository
     @GetMapping("/labs/{title}")
     public ResponseEntity<Lab> getByTitle(@PathVariable String title) {
         Lab lab = labRepository.findByTitle(title);

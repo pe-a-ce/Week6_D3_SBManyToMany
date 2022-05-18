@@ -10,6 +10,6 @@ public interface StudentRepository extends JpaRepository <Student, Long> {
 
     // @Query The method name does not impact the query
     @Query(value = "SELECT * FROM STUDENT ORDER BY LAST_NAME", nativeQuery = true)
-    List<Student> findAllOrdered();
+    List<Student> findAllByLastNameOrdered();
 }
 
