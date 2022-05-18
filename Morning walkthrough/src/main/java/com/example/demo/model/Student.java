@@ -14,15 +14,16 @@ public class Student {
     private String firstName;
     private String lastName;
 
-    @ManyToMany(mappedBy = "students")
+    @ManyToMany(mappedBy = "students") //mapped by = name of the property in 'Student' that's to be FK
     @JsonIgnoreProperties(value = {"students"})
     private Set<Lab> labs;
+//    collection of labs^^
 
 //    many libraries require a no arg constructor to run properly
     public Student() {
     }
 
-
+    // Here is one that accepts args for all properties
     public Student(Long id, String firstName, String lastName, Set<Lab> labs) {
         this.id = id;
         this.firstName = firstName;

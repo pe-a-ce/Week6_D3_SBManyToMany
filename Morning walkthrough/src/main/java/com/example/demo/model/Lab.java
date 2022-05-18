@@ -22,14 +22,23 @@ public class Lab {
         e.g. in DBSeeder we save a lab with a set of Students - we don't need to manually save them as
         Hibernate will make sure all the orders from the list will be saved to the corresponding table
 
- but may cause us some troubles during runtime - why?
+ but may cause us some troubles during runtime - would cause issues if we begin to use the delete operation
+ due to the lab holding students who could then also be deleted
 
      */
     @ManyToMany(cascade = CascadeType.ALL)
+
+/*   join table will be the extra table gluing the lab table and the student table
+
+Note that using @JoinTable or even @JoinColumn isn't required.
+JPA will generate the table and column names for us.
+However, the strategy JPA uses won't always match the naming conventions we use.
+So, we need the possibility to configure table and column names.
+ */
     @JoinTable(name = "enrolments",
             joinColumns = @JoinColumn(name = "lab_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    @JsonIgnoreProperties(value = {"labs"})
+    @JsonIgnoreProperties(value = {"labs"}) // ignores the specified logical properties in JSON serialization and deserialization. It is annotated at class level.
     private Set<Student> students;
 
     public Lab() {
