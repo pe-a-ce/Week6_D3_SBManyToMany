@@ -5,11 +5,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
+@Entity //  specifies that the class is an entity and is mapped to a database table.
 public class Student {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Id // specifies the primary key of an entity
+@GeneratedValue(strategy = GenerationType.IDENTITY) // provides for the specification of generation strategies for the values of primary keys.
     private Long id;
     private String firstName;
     private String lastName;
