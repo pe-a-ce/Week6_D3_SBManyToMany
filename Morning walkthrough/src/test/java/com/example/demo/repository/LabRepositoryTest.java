@@ -25,12 +25,12 @@ class LabRepositoryTest {
         }
 
     @Test
-    void findByNonExisitingTitle() {
+    void findByNonExistingTitle() {
         // Given the data.sql
-        String nenExisistingTtile  = "HOW TO TRAIN GOLDFISH USING ELEPHANT TRAINING TECHNIQUES";
+        String nenExistingTtile  = "HOW TO TRAIN GOLDFISH USING ELEPHANT TRAINING TECHNIQUES";
 
         // When
-        Lab byTitle = labRepository.findByTitle(nenExisistingTtile);
+        Lab byTitle = labRepository.findByTitle(nenExistingTtile);
 
         // Then
         assertNull(byTitle);
