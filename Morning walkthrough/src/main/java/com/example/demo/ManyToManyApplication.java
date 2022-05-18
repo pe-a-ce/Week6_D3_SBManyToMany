@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+// @SpringBootApplication is a compilation of the @Configuration, @EnableAutoConfiguration, and @ComponentScan annotations
+public class ManyToManyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(ManyToManyApplication.class, args);
 	}
 
 }

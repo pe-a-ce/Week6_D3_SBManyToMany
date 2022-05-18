@@ -20,10 +20,9 @@ public class Student {
 //    collection of labs^^
 
 //    many libraries require a no arg constructor to run properly
-    public Student() {
-    }
+    public Student() {}
 
-    // Here is one that accepts args for all properties
+    // Here are the constructors that accepts args for all properties
     public Student(Long id, String firstName, String lastName, Set<Lab> labs) {
         this.id = id;
         this.firstName = firstName;
@@ -31,6 +30,7 @@ public class Student {
         this.labs = labs;
     }
 
+//    Getters and Setters
     public Long getId() {
         return id;
     }
